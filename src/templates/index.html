@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 
     <!-- Hero Section-->
-    <section style="background: url(img/hero.jpg); background-size: cover; background-position: center center" class="hero">
+    <section style="background: url({% static 'img/hero.jpg' %}); background-size: cover; background-position: center center" class="hero">
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
@@ -36,7 +37,7 @@
                 </header>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                 <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                    <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid"></div>
+                    <div class="avatar"><img src="{% static 'img/avatar-1.jpg' %}" alt="..." class="img-fluid"></div>
                     <div class="title"><span>John Doe</span></div></a>
                   <div class="date"><i class="icon-clock"></i> 2 months ago</div>
                   <div class="comments"><i class="icon-comment"></i>12</div>
@@ -44,11 +45,11 @@
               </div>
             </div>
           </div>
-          <div class="image col-lg-5"><img src="img/featured-pic-1.jpeg" alt="..."></div>
+          <div class="image col-lg-5"><img src="{% static 'img/featured-pic-1.jpeg' %}" alt="..."></div>
         </div>
         <!-- Post        -->
         <div class="row d-flex align-items-stretch">
-          <div class="image col-lg-5"><img src="img/featured-pic-2.jpeg" alt="..."></div>
+          <div class="image col-lg-5"><img src="{% static 'img/featured-pic-2.jpeg' %}" alt="..."></div>
           <div class="text col-lg-7">
             <div class="text-inner d-flex align-items-center">
               <div class="content">
@@ -58,7 +59,7 @@
                 </header>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                 <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                    <div class="avatar"><img src="img/avatar-2.jpg" alt="..." class="img-fluid"></div>
+                    <div class="avatar"><img src="{% static 'img/avatar-2.jpg' %}" alt="..." class="img-fluid"></div>
                     <div class="title"><span>John Doe</span></div></a>
                   <div class="date"><i class="icon-clock"></i> 2 months ago</div>
                   <div class="comments"><i class="icon-comment"></i>12</div>
@@ -78,7 +79,7 @@
                 </header>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrude consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                 <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                    <div class="avatar"><img src="img/avatar-3.jpg" alt="..." class="img-fluid"></div>
+                    <div class="avatar"><img src="{% static 'img/avatar-3.jpg' %}" alt="..." class="img-fluid"></div>
                     <div class="title"><span>John Doe</span></div></a>
                   <div class="date"><i class="icon-clock"></i> 2 months ago</div>
                   <div class="comments"><i class="icon-comment"></i>12</div>
@@ -86,12 +87,12 @@
               </div>
             </div>
           </div>
-          <div class="image col-lg-5"><img src="img/featured-pic-3.jpeg" alt="..."></div>
+          <div class="image col-lg-5"><img src="{% static 'img/featured-pic-3.jpeg' %}" alt="..."></div>
         </div>
       </div>
     </section>
     <!-- Divider Section-->
-    <section style="background: url(img/divider-bg.jpg); background-size: cover; background-position: center bottom" class="divider">
+    <section style="background: url({% static 'img/divider-bg.jpg' %}); background-size: cover; background-position: center bottom" class="divider">
       <div class="container">
         <div class="row">
           <div class="col-md-7">
@@ -109,7 +110,7 @@
         </header>
         <div class="row">
           <div class="post col-md-4">
-            <div class="post-thumbnail"><a href="post.html"><img src="img/blog-1.jpg" alt="..." class="img-fluid"></a></div>
+            <div class="post-thumbnail"><a href="post.html"><img src="{% static 'img/blog-1.jpg' %}" alt="..." class="img-fluid"></a></div>
             <div class="post-details">
               <div class="post-meta d-flex justify-content-between">
                 <div class="date">20 May | 2016</div>
@@ -120,7 +121,7 @@
             </div>
           </div>
           <div class="post col-md-4">
-            <div class="post-thumbnail"><a href="post.html"><img src="img/blog-2.jpg" alt="..." class="img-fluid"></a></div>
+            <div class="post-thumbnail"><a href="post.html"><img src="{% static 'img/blog-2.jpg' %}" alt="..." class="img-fluid"></a></div>
             <div class="post-details">
               <div class="post-meta d-flex justify-content-between">
                 <div class="date">20 May | 2016</div>
@@ -131,7 +132,7 @@
             </div>
           </div>
           <div class="post col-md-4">
-            <div class="post-thumbnail"><a href="post.html"><img src="img/blog-3.jpg" alt="..." class="img-fluid"></a></div>
+            <div class="post-thumbnail"><a href="post.html"><img src="{% static 'img/blog-3.jpg' %}" alt="..." class="img-fluid"></a></div>
             <div class="post-details">
               <div class="post-meta d-flex justify-content-between">
                 <div class="date">20 May | 2016</div>
@@ -169,19 +170,19 @@
     <section class="gallery no-padding">    
       <div class="row">
         <div class="mix col-lg-3 col-md-3 col-sm-6">
-          <div class="item"><a href="img/gallery-1.jpg" data-fancybox="gallery" class="image"><img src="img/gallery-1.jpg" alt="..." class="img-fluid">
+          <div class="item"><a href="img/gallery-1.jpg" data-fancybox="gallery" class="image"><img src="{% static 'img/gallery-1.jpg' %}" alt="..." class="img-fluid">
               <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div></a></div>
         </div>
         <div class="mix col-lg-3 col-md-3 col-sm-6">
-          <div class="item"><a href="img/gallery-2.jpg" data-fancybox="gallery" class="image"><img src="img/gallery-2.jpg" alt="..." class="img-fluid">
+          <div class="item"><a href="img/gallery-2.jpg" data-fancybox="gallery" class="image"><img src="{% static 'img/gallery-2.jpg' %}" alt="..." class="img-fluid">
               <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div></a></div>
         </div>
         <div class="mix col-lg-3 col-md-3 col-sm-6">
-          <div class="item"><a href="img/gallery-3.jpg" data-fancybox="gallery" class="image"><img src="img/gallery-3.jpg" alt="..." class="img-fluid">
+          <div class="item"><a href="img/gallery-3.jpg" data-fancybox="gallery" class="image"><img src="{% static 'img/gallery-3.jpg' %}" alt="..." class="img-fluid">
               <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div></a></div>
         </div>
         <div class="mix col-lg-3 col-md-3 col-sm-6">
-          <div class="item"><a href="img/gallery-4.jpg" data-fancybox="gallery" class="image"><img src="img/gallery-4.jpg" alt="..." class="img-fluid">
+          <div class="item"><a href="img/gallery-4.jpg" data-fancybox="gallery" class="image"><img src="{% static 'img/gallery-4.jpg' %}" alt="..." class="img-fluid">
               <div class="overlay d-flex align-items-center justify-content-center"><i class="icon-search"></i></div></a></div>
         </div>
       </div>
