@@ -28,8 +28,10 @@
       <div class="container">
         <!-- Post-->
         {% for obj in object_list %}
-
         <div class="row d-flex align-items-stretch">
+            {% if not forloop.first and not forloop.last %}
+            <div class="image col-lg-5"><img src="{{ obj.thumbnail.url }}" alt="..."></div>
+            {% endif %}
           <div class="text col-lg-7">
             <div class="text-inner d-flex align-items-center">
               <div class="content">
@@ -52,7 +54,9 @@
               </div>
             </div>
           </div>
+          {% if forloop.first or forloop.last %}
           <div class="image col-lg-5"><img src="{{ obj.thumbnail.url }}" alt="..."></div>
+          {% endif %}
         </div>
         {% endfor %}
         <!-- Post        -->
