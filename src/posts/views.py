@@ -33,7 +33,7 @@ def blog(request):
 
 
   context = {
-    'post_list': paginated_queryset,
+    'queryset': paginated_queryset,
     'page_request_var': page_request_var
   }
   return render(request, 'blog.html', context)
