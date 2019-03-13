@@ -21,7 +21,7 @@ def index(request):
 
 def blog(request):
   post_list = Post.objects.all()
-  paginator = Paginator(post_list, 1)
+  paginator = Paginator(post_list, 4)
   page_request_var = 'page'
   page = request.GET.get(page_request_var)
   try:
