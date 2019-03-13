@@ -2,9 +2,11 @@ from django.shortcuts import render
 from .models import Post
 
 def index(request):
-  queryset = Post.objects.filter(featured=True)
+  featured = Post.objects.filter(featured=True)
+  latest = Post.objects.order_by('-timestamp')[0:3]
   context = {
-    'object_list': queryset
+    'object_list': featured,
+    'latest': latest
   }
   return render(request, 'index.html', context)
 
