@@ -2,9 +2,14 @@ from django.db.models import Count, Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from .forms import CommentForm, PostForm
-from .models import Post
+from .models import Post, Author
 from marketing.models import SignUp
 
+def get_author(user):
+    qs = Author.objects.filter(user=user)
+    if qs.exists():
+      return qs[0]
+    return None
 
 def search(request):
     queryset = Post.objects.all()
@@ -89,20 +94,44 @@ def post(request, id):
   return render(request, 'post.html', context)
 
 def post_create(request):
-  form = PostForm(request.POST or None)
+  title = 'Create'
+  form = PostForm(request.POST or None, request.FILES or None)
+  author = get_author(request.user)
   if request.method == "POST":
     if form.is_valid():
+      form.instance.author = author
       form.save()
       return redirect(reverse("post-detail", kwargs={
           'id': form.instance.id
       }))
   context = {
+    'title': title,
     'form': form
   }
   return render(request, "post_create.html", context)
 
 def post_update(request, id):
-  pass
+  title = 'Update'
+  post = get_object_or_404(Post, id=id)
+  form = PostForm(
+    request.POST or None, 
+    request.FILES or None, 
+    instance=post)
+  author = get_author(request.user)
+  if request.method == "POST":
+    if form.is_valid():
+      form.instance.author = author
+      form.save()
+      return redirect(reverse("post-detail", kwargs={
+          'id': form.instance.id
+      }))
+  context = {
+    'title': title,
+    'form': form
+  }
+  return render(request, "post_create.html", context)
 
 def post_delete(request, id):
-  pass
+    post = get_object_or_404(Post, id=id)
+    post.delete()
+    return redirect(reverse('post-list'))
