@@ -35,8 +35,20 @@ class Post(models.Model):
 
   def __str__(self):
       return self.title
+
+
   def get_absolute_url(self):
       return reverse('post-detail', kwargs={
+        'id': self.id
+      })
+
+  def get_update_url(self):
+      return reverse('post-update', kwargs={
+        'id': self.id
+      })
+
+  def get_delete_url(self):
+      return reverse('post-delete', kwargs={
         'id': self.id
       })
   
