@@ -38,9 +38,10 @@
                 <header class="post-header">
                   <div class="category">
                     {% for cat in obj.categories.all %}
-                    <a href="#">{{ cat }}</a>
+                    <a href="{{ obj.get_absolute_url }}">{{ cat }}</a>
                     {% endfor %}
-                    </div><a href="post.html">
+                    </div>
+                    <a href="{{ obj.get_absolute_url }}">
                     <h2 class="h4">{{ obj.title }}</h2>
                   </a>
                 </header>
@@ -86,10 +87,10 @@
                 <div class="date">{{ obj.timestamp }}</div>
                 <div class="category">
                   {% for cat in obj.categories.all %}
-                  <a href="#">{{ cat }}</a>
+                  <a href="{{ obj.get_absolute_url }}">{{ cat }}</a>
                   {% endfor %}
                 </div>
-              </div><a href="#">
+              </div><a href="{{ obj.get_absolute_url }}">
                 <h3 class="h4">{{ obj.title }}</h3></a>
               <p class="text-muted">{{ obj.overview|linebreaks|truncatechars:200 }}</p>
             </div>

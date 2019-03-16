@@ -1,3 +1,4 @@
 env/
 .vscode
 src/static_root/img
+src/media_root
