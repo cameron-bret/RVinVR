@@ -8,7 +8,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-7">
-            <h1>Bootstrap 4 Blog - A free template by Bootstrap Temple</h1><a href="#" class="hero-link">Discover More</a>
+            <h1>RV in VR - a blog obsessed with recreational vehicles and virtual reality!</h1><a href="#" class="hero-link">Discover More</a>
           </div>
         </div><a href=".intro" class="continue link-scroll"><i class="fa fa-long-arrow-down"></i> Scroll Down</a>
       </div>
@@ -44,7 +44,7 @@
                     <h2 class="h4">{{ obj.title }}</h2>
                   </a>
                 </header>
-                <p>{{ obj.overview }}</p>
+                <p>{{ obj.overview|linebreaks|truncatechars:200 }}</p>
                 <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
                     <div class="avatar"><img src="{{ obj.author.profile_picture.url }}" alt="..." class="img-fluid"></div>
                     <div class="title"><span>{{ obj.author }}</span></div></a>
@@ -92,7 +92,7 @@
                 </div>
               </div><a href="#">
                 <h3 class="h4">{{ obj.title }}</h3></a>
-              <p class="text-muted">{{ obj.overview }}</p>
+              <p class="text-muted">{{ obj.overview|linebreaks|truncatechars:200 }}</p>
             </div>
           </div>
           {% endfor %}

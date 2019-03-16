@@ -15,7 +15,7 @@
                 <div class="post-thumbnail"><a href="{{ post.get_absolute_url }}"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></a></div>
                 <div class="post-details">
                   <div class="post-meta d-flex justify-content-between">
-                    <!-- <div class="date meta-last">20 May | 2016</div> -->
+                    {% comment %}<div class="date meta-last">20 May | 2016</div> {% endcomment %}
                     <div class="category">
                     {% for cat in post.categories.all %}
                     <a href="#">{{ cat }}</a>

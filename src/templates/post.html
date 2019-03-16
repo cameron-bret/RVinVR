@@ -18,7 +18,7 @@
               <div class="post-thumbnail"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></div>
               <div class="post-details">
                 <div class="post-meta d-flex justify-content-between">
-                 
+            
                   <div class="category">
                     {% for cat in post.categories.all %}
                     <a href="#">{{ cat }}</a>
@@ -36,7 +36,7 @@
                   <div class="d-flex align-items-center flex-wrap">       
                     <div class="date"><i class="icon-clock"></i> {{ post.timestamp|timesince }} ago</div>
                     <div class="views"><i class="icon-eye"></i> {{ post.view_count }}</div>
-                    <div class="comments meta-last"><i class="icon-comment"></i> {{ post.comment_count }}</div>
+                    <div class="comments meta-last"><i class="icon-comment"></i>{{ post.comment_count }}</div>
                   </div>
                 </div>
                 <div class="post-body">
