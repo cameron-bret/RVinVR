@@ -48,6 +48,22 @@ def index(request):
   }
   return render(request, 'index.html', context)
 
+def about(request):
+  featured = Post.objects.filter(featured=True)
+  latest = Post.objects.order_by('-timestamp')[0:3]
+
+  if request.method == "POST":
+    email = request.POST['email']
+    new_signup = SignUp()
+    new_signup.email = email
+    new_signup.save()
+    
+  context = {
+    'object_list': featured,
+    'latest': latest
+  }
+  return render(request, 'about.html', context)
+
 def blog(request):
   category_count = get_category_count()
   print(category_count)
