@@ -3,3 +3,4 @@ env/
 src/static_root/img
 src/media_root
 src/rvinvr/settings.py
+rvinvr/settings.py
