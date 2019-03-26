@@ -94,7 +94,10 @@ def post(request, id):
   category_count = get_category_count()
   most_recent = Post.objects.order_by('-timestamp')[:3]
   post = get_object_or_404(Post, id=id)
-  PostView.objects.get_or_create(user=request.user, post=post)
+
+  if request.user.is_authenticated:
+    PostView.objects.get_or_create(user=request.user, post=post)
+    
   form = CommentForm(request.POST or None)
   if request.method == "POST":
       if form.is_valid():
