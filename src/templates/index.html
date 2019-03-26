@@ -108,7 +108,7 @@
           </div>
           <div class="col-md-8">
             <div class="form-holder">
-              <form action="." method="POST">
+              <form action="{% url 'subscribe' %}" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                   {{ form }}
