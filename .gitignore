@@ -4,3 +4,7 @@ src/static_root/img
 src/media_root
 src/rvinvr/settings.py
 rvinvr/settings.py
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
